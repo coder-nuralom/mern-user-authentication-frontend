@@ -3,7 +3,7 @@ import React, { createContext, useContext, useState } from "react";
 const UserContext = createContext();
 
 export const UserProvider = ({ children }) => {
-  const baseURL = "https://mern-user-authentication-cuxs.onrender.com";
+  const baseURL = "http://localhost:3000";
   const [user, setUser] = useState(() => {
     const storedUser = localStorage.getItem("user");
     return storedUser ? JSON.parse(storedUser) : null;
@@ -18,3 +18,4 @@ export const UserProvider = ({ children }) => {
 export const useUser = () => {
   return useContext(UserContext);
 };
+// mern-user-authentication-cuxs.onrender.com

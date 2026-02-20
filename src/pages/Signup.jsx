@@ -35,6 +35,7 @@ const Signup = () => {
         toast.success(
           response?.data?.message || "Account created successfully.!",
         );
+        localStorage.setItem("emailToverify", userData.email);
         navigate("/verify-email");
       }
     } catch (error) {
