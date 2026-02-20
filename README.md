@@ -1,16 +1,92 @@
-# React + Vite
+🔐 MERN Authentication System:-
+A complete authentication and authorization system built with Node.js, Express, MongoDB, and JWT.
+This project includes email verification, OTP-based password reset, session management, and secure authentication using hashed passwords.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+🚀 Features:-
+✅ User Registration
 
-Currently, two official plugins are available:
+✅ Email Verification (JWT Token based)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+✅ Secure Login System
 
-## React Compiler
+✅ Session Management
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+✅ Logout Functionality
 
-## Expanding the ESLint configuration
+✅ Forgot Password with OTP (Email Based)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+✅ OTP Verification with Expiry
+
+✅ Resend OTP
+
+✅ Change Password
+
+✅ Password Hashing using bcrypt
+
+✅ Secure Token Handling using JWT
+
+🛠️ Tech Stack:-
+Backend: Node.js, Express.js
+
+Database: MongoDB (Mongoose)
+
+Authentication: JWT (Access & Refresh Token)
+
+Password Hashing: bcryptjs
+
+Email Service: Nodemailer
+
+Security: Crypto (SHA256 for OTP hashing)
+
+🔑 Authentication Flow:-
+📝 Register
+
+User registers with name, email, password.
+
+Password is hashed using bcrypt.
+
+JWT verification token generated (10 min expiry).
+
+Verification email sent to user.
+
+📧 Verify Email
+
+User verifies email using JWT token.
+
+Account is marked as verified.
+
+🔓 Login
+
+Checks email & password.
+
+Only verified users can login.
+
+Generates:
+
+Access Token (10 days)
+
+Refresh Token (30 days)
+
+Session stored in database.
+
+🔁 Forgot Password
+
+Generates 6-digit OTP.
+
+OTP hashed using SHA256.
+
+OTP expires in 2 minutes.
+
+OTP sent via email.
+
+🔍 Verify OTP
+
+Validates OTP.
+
+Clears stored OTP after successful verification.
+
+🔐 Change Password
+
+Hashes new password.
+
+Updates securely in database.
